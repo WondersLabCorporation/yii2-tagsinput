@@ -7,16 +7,26 @@
 
 ## Install
 
-Via Composer
+Add to your composer.json file
+
+```
+"repositories": [
+        {
+            "url": "https://github.com/WondersLabCorporation/yii2-tagsinput.git",
+            "type": "git"
+        }
+    ]
+```
+and run
 
 ```bash
-$ composer require wbraganca/yii2-tagsinput
+$ composer require WondersLabCorporation/yii2-tagsinput:dev-master
 ```
 
 or add
 
 ```
-"wbraganca/yii2-tagsinput": "*"
+"WondersLabCorporation/yii2-tagsinput": "dev-master"
 ```
 
 to the require section of your `composer.json` file.

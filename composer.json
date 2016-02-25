@@ -1,5 +1,5 @@
 {
-    "name": "wbraganca/yii2-tagsinput",
+    "name": "WondersLabCorporation/yii2-tagsinput",
     "description": "The yii2-tagsinput is a Yii 2 wrapper for [bootstrap-tagsinput](https://github.com/timschlechter/bootstrap-tagsinput). A user interface for managing tags.",
     "type": "yii2-extension",
     "keywords": [
