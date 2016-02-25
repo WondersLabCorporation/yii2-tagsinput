@@ -36,7 +36,10 @@ class TagsinputWidget extends \yii\widgets\InputWidget
      * @var string the hashed variable to store the pluginOptions
      */
     protected $_hashVar;
-
+    /**
+     * @var array of all init data. Use it with ensureMultiple
+     */
+    public $items = [];
     /**
      * @inheritdoc
      */
@@ -45,9 +48,17 @@ class TagsinputWidget extends \yii\widgets\InputWidget
         $this->registerClientScript();
 
         if ($this->hasModel()) {
-            echo Html::activeTextInput($this->model, $this->attribute, $this->options);
+            if (isset($this->options['multiple']) && $this->options['multiple'] === true) {
+                echo Html::activeDropDownList($this->model, $this->attribute, $this->items, $this->options);
+            } else {
+                echo Html::activeTextInput($this->model, $this->attribute, $this->options);
+            }
         } else {
-            echo Html::textInput($this->name, $this->value, $this->options);
+            if (isset($this->options['multiple']) && $this->options['multiple'] === true) {
+                echo Html::dropDownList($this->name, $this->value, $this->items, $this->options);
+            } else {
+                echo Html::textInput($this->name, $this->value, $this->options);
+            }
         }
     }
 
